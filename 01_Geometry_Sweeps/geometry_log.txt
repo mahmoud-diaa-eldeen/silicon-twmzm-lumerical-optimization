@@ -1,0 +1,7 @@
+G000 W=500nm slab=90nm neff=2.56708 ng=3.9364 loss=498.2 dB/m Gcore=0.354 Gslab=0.362 Aeff=2.056e-13 mode2=2.1151
+G001 W=450nm slab=90nm neff=2.52117 ng=3.9308 loss=478.6 dB/m Gcore=0.326 Gslab=0.367 Aeff=2.084e-13 mode2=2.1027
+G002 W=550nm slab=90nm neff=2.60485 ng=3.9311 loss=500.0 dB/m Gcore=0.383 Gslab=0.358 Aeff=2.051e-13 mode2=2.1399
+G003 W=600nm slab=90nm neff=2.63595 ng=3.9210 loss=501.2 dB/m Gcore=0.399 Gslab=0.355 Aeff=2.065e-13 mode2=2.1751
+G004 W=500nm slab=70nm neff=2.53272 ng=3.9977 loss=450.5 dB/m Gcore=0.435 Gslab=0.266 Aeff=1.998e-13 mode2=1.9710
+G005 W=500nm slab=110nm neff=2.60425 ng=3.8829 loss=525.3 dB/m Gcore=0.272 Gslab=0.460 Aeff=2.150e-13 mode2=2.2671
+DONE

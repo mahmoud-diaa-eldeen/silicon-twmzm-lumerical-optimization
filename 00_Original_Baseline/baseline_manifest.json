@@ -1,0 +1,106 @@
+{
+  "study": "TW_Modulator_Optimization_Study",
+  "created": "2026-10-27",
+  "software": {
+    "product": "Ansys Lumerical",
+    "version": "2024 R1 (v241)",
+    "python_api": "C:/Program Files/Lumerical/v241/python/python.exe",
+    "solvers_used": ["CHARGE", "MODE (FDE)"]
+  },
+  "original_projects": {
+    "device_ldev": "D:/lumerical/tw_modulator_DEVICE.ldev",
+    "optical_mode_lms": "D:/lumerical/tw_modulator_optical_MODE.lms",
+    "rf_mode_lms": "D:/lumerical/tw_modulator_RF_MODE.lms",
+    "interconnect_icp": "D:/lumerical/tw_modulator_INTERCONNECT_ENA.icp",
+    "dc_script": "D:/lumerical/tw_modulator_DEVICE_dc_C.lsf",
+    "ac_script": "D:/lumerical/tw_modulator_DEVICE_ac_RC.lsf",
+    "optical_script": "D:/lumerical/tw_modulator_optical_MODE.lsf"
+  },
+  "immutability": "Original files were never overwritten by this study. All runs load a fresh copy of the original; experiment outputs are written only under TW_Modulator_Optimization_Study/.",
+  "geometry": {
+    "units": "m",
+    "rib": {"object": "::model::geometry::rib", "material": "Si (Silicon)", "x_min": -2.5e-7, "x_max": 2.5e-7, "width_nm": 500, "z_min": 9.0e-8, "z_max": 2.2e-7, "height_nm": 130},
+    "slab": {"object": "::model::geometry::slab", "material": "Si (Silicon)", "x_min": -2.5e-6, "x_max": 2.5e-6, "z_min": 0.0, "z_max": 9.0e-8, "thickness_nm": 90},
+    "total_si_thickness_nm": 220,
+    "plateau": {"z_min": 0.0, "z_max": 2.2e-7, "note": "outside |x|>2.5um, present in CHARGE only"},
+    "oxide": {"material": "SiO2 (Glass) - Sze (CHARGE) / SiO2 (Glass) - Palik (MODE)"},
+    "contacts": {"anode": {"x_min": -5e-6, "x_max": -3.8e-6, "material": "Al"}, "cathode": {"x_min": 3.8e-6, "x_max": 5e-6, "material": "Al"}},
+    "device_width_um": 10.0,
+    "phase_shifter_length_mm": 5.0,
+    "doped_length_mm": 4.5
+  },
+  "doping_objects": {
+    "units_note": "Lumerical script/API concentration is in /m^3; GUI commonly shows /cm^3. 1e21 /m^3 = 1e15 /cm^3. Verified against Ansys docs: 1e15 /cm3 = 1e21 /m3.",
+    "objects": {
+      "pepi": {"type": "Constant Doping Region", "dopant": "p", "concentration_m3": 1e21, "concentration_cm3": 1e15, "x": [-5e-6, 5e-6], "z": [-5e-8, 2.5e-7]},
+      "p implant": {"type": "Diffusion Doping", "dopant": "p", "concentration_m3": 7e23, "concentration_cm3": 7e17, "x": [-6e-6, -1.5e-7], "z": [-3e-7, 9e-8], "source_face": "upper z", "junction_width_m": 1e-7},
+      "n implant": {"type": "Diffusion Doping", "dopant": "n", "concentration_m3": 5e23, "concentration_cm3": 5e17, "x": [1.5e-7, 6e-6], "z": [-3e-7, 9e-8], "source_face": "upper z", "junction_width_m": 1e-7},
+      "p++": {"type": "Diffusion Doping", "dopant": "p", "concentration_m3": 1e25, "concentration_cm3": 1e19, "x": [-6e-6, -2e-6], "z": [-3e-7, 2.2e-7], "source_face": "upper z", "junction_width_m": 1e-7},
+      "n++": {"type": "Diffusion Doping", "dopant": "n", "concentration_m3": 1e25, "concentration_cm3": 1e19, "x": [2e-6, 6e-6], "z": [-3e-7, 2.2e-7], "source_face": "upper z", "junction_width_m": 1e-7},
+      "p wg implant": {"type": "Diffusion Doping", "dopant": "p", "concentration_m3": 5e23, "concentration_cm3": 5e17, "x": [-3e-7, 6e-8], "z": [0.0, 2.55e-7], "source_face": "lower x", "junction_width_m": 1.2e-7},
+      "n wg implant": {"type": "Diffusion Doping", "dopant": "n", "concentration_m3": 7e23, "concentration_cm3": 7e17, "x": [-4e-8, 2.5e-7], "z": [2.5e-9, 2.375e-7], "source_face": "upper x", "junction_width_m": 1.1e-7}
+    },
+    "junction": {"orientation": "lateral (x)", "approx_x_nm": 0, "p_side": "x<0", "n_side": "x>0"}
+  },
+  "charge_settings": {
+    "solver_mode": "steady state (DC), ssac (small-signal AC)",
+    "fermi_statistics": true,
+    "norm_length_m": 0.01,
+    "temperature_K": 300,
+    "mesh_min_edge_m": 4e-9,
+    "mesh_max_edge_m": 6e-7,
+    "mesh_dz_m": 2e-10,
+    "spatial_refinement": 30,
+    "cathode_sweep": {"type": "value table", "values_V": [-0.5, 0.0, 1.0, 2.0, 3.0, 4.0], "dv_V": 0.025},
+    "monitor_charge": {"type": "2D y-normal", "records": ["n", "p"], "x_span_m": 5e-6, "z_span_m": 2.46e-7}
+  },
+  "mode_settings": {
+    "solver": "FDE, 2D Y normal",
+    "wavelength_m": 1.55e-6,
+    "number_of_trial_modes": 10,
+    "search": "near n",
+    "use_max_index": true,
+    "calculate_group_index": true,
+    "mesh_refinement": "conformal variant 1",
+    "pml_layers": 12,
+    "core_mesh_override": {"dx_m": 1e-8, "dz_m": 1e-8, "x_span_m": 5e-7, "z_span_m": 2.2e-7},
+    "np_import_object": "::model::np (NPDensityGridAttribute)"
+  },
+  "baseline_results": {
+    "optical": {
+      "neff_0V": 2.567082,
+      "ng_0V": 3.936389,
+      "loss_0V_dB_per_m": 498.22,
+      "loss_0V_dB_per_cm": 4.982,
+      "loss_4V_dB_per_m": 313.21,
+      "dneff_0_to_4V": 1.07e-4,
+      "Gamma_core": 0.354,
+      "Gamma_slab": 0.362,
+      "Gamma_clad": 0.284,
+      "Aeff_m2": 2.056e-13,
+      "TE_polarization_fraction": 0.9866,
+      "VpiL_V_cm": 2.90,
+      "definition_note": "Gamma computed from |Ex|^2+|Ey|^2+|Ez|^2 on the FDE output grid; screening metric."
+    },
+    "electrical": {
+      "Cj_0V_fF_per_um": 0.2100,
+      "Cj_minus0p4V_fF_per_um": 0.2418,
+      "Cj_4V_fF_per_um": 0.1398,
+      "Rslab_total_normalized": 0.0159194,
+      "R_0V_20GHz_ohm_total": 1.592,
+      "note": "Cj from dQ/dV on the user-specified bias grid; Rs from ac_RC.lsf extraction."
+    },
+    "system_reference_targets": {
+      "f3dB_GHz": 15.0,
+      "ER_dB_at_20Gbps_1Vpp": 4.25,
+      "notch_shift_nm_per_Vpp": 0.9,
+      "source": "project brief / Baehr-Jones reference; not independently re-simulated in this baseline"
+    }
+  },
+  "result_identifiers": {
+    "charge_baseline_mat": "00_Original_Baseline/charge_baseline.mat",
+    "regenerated_dc_C_mat": "D:/lumerical/tw_modulator_dc_C.mat",
+    "regenerated_optical_data_mat": "D:/lumerical/tw_modulator_optical_data.mat",
+    "regenerated_Rslab_dat": "D:/lumerical/tw_modulator_Rslab_tot.dat"
+  }
+}

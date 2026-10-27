@@ -1,0 +1,20 @@
+ORIGINAL PROJECT REFERENCE (immutable baseline)
+================================================
+Device project : D:\lumerical\tw_modulator_DEVICE.ldev
+Optical project: D:\lumerical\tw_modulator_optical_MODE.lms
+RF project     : D:\lumerical\tw_modulator_RF_MODE.lms
+INTERCONNECT   : D:\lumerical\tw_modulator_INTERCONNECT_ENA.icp
+DC script      : D:\lumerical\tw_modulator_DEVICE_dc_C.lsf
+AC script      : D:\lumerical\tw_modulator_DEVICE_ac_RC.lsf
+Optical script : D:\lumerical\tw_modulator_optical_MODE.lsf
+
+Rules used by this study:
+1. The original files were only ever LOADED, never saved over.
+2. Every experiment applies modifications in-memory (switchtolayout) and writes
+   results to its own directory under TW_Modulator_Optimization_Study/.
+3. Finalists are saved as separate .ldev/.lms copies in 06_Final_Validation/.
+4. Backup of pre-existing regenerated outputs:
+   D:\lumerical\_backup_original\
+
+Software: Ansys Lumerical 2024 R1 (v241)
+Python API: C:\Program Files\Lumerical\v241\python\python.exe

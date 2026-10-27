@@ -1,0 +1,7 @@
+G000 W=500nm slab=90nm neff=2.56706 loss=535.9 Gcore=0.354 Gslab=0.362
+G001 W=450nm slab=90nm neff=2.52114 loss=516.4 Gcore=0.326 Gslab=0.367
+G002 W=550nm slab=90nm neff=2.60483 loss=537.2 Gcore=0.383 Gslab=0.358
+G003 W=600nm slab=90nm neff=2.63593 loss=537.5 Gcore=0.399 Gslab=0.355
+G004 W=500nm slab=70nm neff=2.53270 loss=490.2 Gcore=0.435 Gslab=0.266
+G005 W=500nm slab=110nm neff=2.60422 loss=560.7 Gcore=0.272 Gslab=0.460
+DONE

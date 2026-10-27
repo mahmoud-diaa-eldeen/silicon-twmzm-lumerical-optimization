@@ -1,0 +1,62 @@
+[
+ {
+  "exp": "C001",
+  "W_nm": 500.0,
+  "slab_nm": 70.0,
+  "p_wg": 1e+24,
+  "n_wg": 1.4e+24,
+  "p_imp": 1.4e+24,
+  "n_imp": 1e+24,
+  "description": "best geometry + best doping (D003)",
+  "dx": 0,
+  "zmin_p": null,
+  "zmax_p": null,
+  "zmin_n": null,
+  "zmax_n": null
+ },
+ {
+  "exp": "C002",
+  "W_nm": 500.0,
+  "slab_nm": 70.0,
+  "p_wg": 1e+24,
+  "n_wg": 1.4e+24,
+  "p_imp": 1.4e+24,
+  "n_imp": 1e+24,
+  "description": "best geometry + best doping + junction J002",
+  "dx": 4e-08,
+  "zmin_p": null,
+  "zmax_p": null,
+  "zmin_n": null,
+  "zmax_n": null
+ },
+ {
+  "exp": "C003",
+  "W_nm": 500.0,
+  "slab_nm": 70.0,
+  "p_wg": 1e+24,
+  "n_wg": 1.4e+24,
+  "p_imp": 1.4e+24,
+  "n_imp": 1e+24,
+  "description": "best geometry + best doping + vertical Z002",
+  "dx": 0,
+  "zmin_p": 1e-07,
+  "zmax_p": 2.2e-07,
+  "zmin_n": 1e-07,
+  "zmax_n": 2.2e-07
+ },
+ {
+  "exp": "C004",
+  "W_nm": 500.0,
+  "slab_nm": 70.0,
+  "p_wg": 2.5e+23,
+  "n_wg": 3.5e+23,
+  "p_imp": 3.5e+23,
+  "n_imp": 2.5e+23,
+  "description": "best geometry + low-loss doping (D001, Pareto low-loss end)",
+  "dx": 0,
+  "zmin_p": null,
+  "zmax_p": null,
+  "zmin_n": null,
+  "zmax_n": null
+ }
+]

@@ -1,0 +1,26 @@
+# Disposable Lumerical session copies (never commit)
+*_session.ldev
+*_session.lms
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Lumerical temporary/session data
+~#*
+*_session.data
+*.lock
+
+# Lumerical session logs (disposable)
+*_session*.log
+
+# 175 MB contaminated evidence project (published as the data-v1.0 release asset)
+00_Original_Baseline/tw_modulator_DEVICE_current.ldev

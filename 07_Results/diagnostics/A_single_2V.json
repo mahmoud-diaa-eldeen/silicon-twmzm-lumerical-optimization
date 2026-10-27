@@ -1,0 +1,29 @@
+{
+ "label": "A_single_2V",
+ "requested_V": [
+  2.0
+ ],
+ "runtime_s": 282.82102227211,
+ "exception": null,
+ "result_names": "recombination\ncharge\nelectrostatics\ndoping\nbandstructure\nintegrated\nanode\ncathode",
+ "n_charge_points": 2,
+ "Qn": [
+  9.223939088388629e-07,
+  9.223907633692097e-07
+ ],
+ "Qp": [
+  9.299341425171081e-07,
+  9.29930993804896e-07
+ ],
+ "Cj": [
+  {
+   "V": 2.0,
+   "dV": 0.02499999999999991,
+   "dQn": 3.1454696531671168e-12,
+   "dQp": 3.148712212073874e-12,
+   "Cj_fF_um": 0.1258836373048198
+  }
+ ],
+ "charge_exists": true,
+ "charge_size": 3370136
+}

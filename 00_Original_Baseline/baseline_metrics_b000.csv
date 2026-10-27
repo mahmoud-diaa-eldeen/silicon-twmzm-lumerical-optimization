@@ -1,0 +1,9 @@
+metric,value,unit,note
+neff_0V,2.567082,dimensionless,"B000 re-run, same mesh"
+ng_0V,3.936389,dimensionless,B000 re-run
+loss_0V,498.23,dB/m,B000 0 V (index 3); recorded baseline 498.22
+VpiL,2.908,V.cm,"0->4 V slope, 1.55 um"
+Cj_0V,0.2100,fF/um,dQ/dV at 0 V
+Gamma_core,0.3535,dimensionless,|E|^2 overlap
+Aeff,2.0561e-13,m^2,MODE native
+TE_fraction,0.9866,dimensionless,MODE native
